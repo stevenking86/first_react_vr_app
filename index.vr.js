@@ -54,7 +54,28 @@ class WelcomeToVR extends React.Component {
             textAlign:'center',
             textAlignVertical:'center',
           }}>
-            Change Color!
+            Change Color
+          </Text>
+        </VrButton>
+
+        <VrButton
+          style={{
+            backgroundColor: 'red',
+            borderRadius: 0.05,
+            margin: 0.05,
+          }}
+          onClickSound={asset('Chameleon-Dream_Awakening-160.mp3')}
+          >
+          <Text style={{
+            fontSize: 0.15,
+            paddingTop: 0.025,
+            paddingBottom: 0.025,
+            paddingLeft: 0.05,
+            paddingRight: 0.05,
+            textAlign:'center',
+            textAlignVertical:'center',
+          }}>
+            Play Music
           </Text>
         </VrButton>
       </View>
