@@ -24,27 +24,27 @@ function init(bundle, parent, options) {
     new THREE.MeshBasicMaterial()
   );
 
-  const cube2 = new THREE.Mesh(
-    new THREE.BoxGeometry(1, 1, 1),
+  const torus = new THREE.Mesh(
+    new THREE.TorusGeometry(3, .5),
     new THREE.MeshBasicMaterial()
   );
 
   cube.position.z = -4;
-  cube2.position.z = 4;
+  torus.position.z = 4;
 
   scene.add(cube);
-  scene.add(cube2)
+  scene.add(torus)
 
-  cubeModule.init([cube, cube2]);
+  cubeModule.init([cube, torus]);
 
   vr.render = function(timestamp) {
     // Any custom behavior you want to perform on each frame goes here
     const seconds = timestamp / 1000;
       cube.position.x = 0 + (1.3 * (Math.cos(seconds)));
-      cube.position.y = 0.2 + (1 * Math.abs(Math.sin(seconds)));
+      cube.position.y = -2.2 + (1 * Math.abs(Math.sin(seconds)));
 
-      cube2.position.x = cube.position.x
-      cube2.position.y = cube.position.y
+      torus.position.x = cube.position.x
+      torus.position.y = cube.position.y
   };
 
   vr.start();
